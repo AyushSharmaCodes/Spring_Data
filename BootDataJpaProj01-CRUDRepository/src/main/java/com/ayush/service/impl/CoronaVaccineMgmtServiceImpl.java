@@ -18,9 +18,20 @@ public class CoronaVaccineMgmtServiceImpl implements CoronaVaccineMgmtService {
     @Override
     public String registerVaccine(CoronaVaccine vaccine) {
         CoronaVaccine registeredVaccine = null;
-        if(vaccine != null)
+        if(vaccine != null) {
             registeredVaccine = vaccineRepo.save(vaccine);
+        }
         return registeredVaccine != null ? "Vaccine registered/updated with "+registeredVaccine.getRegNo() : "Vaccine registration/update failed";
+    }
+
+    @Override
+    public Iterable<CoronaVaccine> registerBatch(Iterable<CoronaVaccine> vaccines) {
+        if (vaccines != null) {
+            return vaccineRepo.saveAll(vaccines);
+        }
+        else {
+            throw new IllegalArgumentException("Batch insertion failed");
+        }
     }
 
 }

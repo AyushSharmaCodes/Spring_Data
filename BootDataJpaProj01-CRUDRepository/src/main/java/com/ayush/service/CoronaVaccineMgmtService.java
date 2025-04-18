@@ -4,5 +4,6 @@ import com.ayush.entity.CoronaVaccine;
 
 public interface CoronaVaccineMgmtService {
 
-    public String registerVaccine(CoronaVaccine vaccine);
+    String registerVaccine(CoronaVaccine vaccine);
+    Iterable<CoronaVaccine> registerBatch(Iterable<CoronaVaccine> vaccines);
 }
