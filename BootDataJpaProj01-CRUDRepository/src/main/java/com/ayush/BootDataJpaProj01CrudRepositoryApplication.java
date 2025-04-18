@@ -10,17 +10,15 @@ import org.springframework.context.ApplicationContext;
 public class BootDataJpaProj01CrudRepositoryApplication {
 
     public static void main(String[] args) {
-//        SpringApplication.run(BootDataJpaProj01CrudRepositoryApplication.class, args);
+        SpringApplication.run(BootDataJpaProj01CrudRepositoryApplication.class, args);
 
-        ApplicationContext ctx = SpringApplication.run(BootDataJpaProj01CrudRepositoryApplication.class, args);
+          //below code is not recommended to write here for testing it can be written in runner class
 
-        CoronaVaccineMgmtService vaccineMgmtService = ctx.getBean("vaccineMgmtService", CoronaVaccineMgmtService.class);
-
-        CoronaVaccine vaccine = new CoronaVaccine("covaxin", "Bharat-Biotech", "India", 780.02, 2);
-
-        String result = vaccineMgmtService.registerVaccine(vaccine);
-
-        System.out.println(result);
+//        ApplicationContext ctx = SpringApplication.run(BootDataJpaProj01CrudRepositoryApplication.class, args);
+//        CoronaVaccineMgmtService vaccineMgmtService = ctx.getBean("vaccineMgmtService", CoronaVaccineMgmtService.class);
+//        CoronaVaccine vaccine = new CoronaVaccine("covaxin", "Bharat-Biotech", "India", 780.02, 2);
+//        String result = vaccineMgmtService.registerVaccine(vaccine);
+//        System.out.println(result);
     }
 
 }
